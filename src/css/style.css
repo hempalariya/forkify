@@ -1,0 +1,134 @@
+:root {
+  --color-primary: #f38e82;
+  --color-grad-1: #fbdb89;
+  --color-grad-2: #f48982;
+
+  --color-grey-light-1: #f9f5f3; /*Light background*/
+  --color-grey-light-2: #f2efee; /*Light lines*/
+  --color-grey-light-3: #d3c7c3; /* Light text (placeholder)*/
+  --color-grey-dark-1: #615551; /* Normal text*/
+  --color-grey-dark-2: #918581; /*Lighter text*/
+
+  --gradient: linear-gradient(
+    to right bottom,
+    var(--color-grad-1),
+    var(--color-grad-2)
+  );
+
+  --bp-large: 78.15em; /* 1250px*/
+  --bp-medium: 61.25em; /* 980px*/
+  --bp-small: 37.5em; /* 600px*/
+  --bp-smallest: 31.25em; /* 500px*/
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Nunito Sans", sans-serif;
+  background-image: var(--gradient);
+  position: relative;
+}
+
+.container {
+  margin: auto;
+  margin-top: 8rem;
+  max-width: 85%;
+  min-height: 85%;
+  background-color: var(--color-grey-light-1);
+  border-radius: 1rem;
+
+  display: grid;
+  grid-template-rows: 10rem minmax(100rem, auto);
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+    "h h"
+    "l r";
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  grid-area: h;
+}
+
+.header .header__logo {
+  height: 5rem;
+}
+
+.header button {
+  border: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  gap: 1rem;
+}
+
+.header .search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .search .search__field {
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  padding: 1rem 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.header .btn.search__btn {
+  width: 12rem;
+  background-image: var(--gradient);
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+}
+
+.header button svg {
+  height: 2rem;
+  width: 2rem;
+}
+
+.header .nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.header .nav ul svg{
+    color: var(--color-grad-1);
+}
+
+.search-results {
+    grid-area: l;
+}
+.recipe {
+    grid-area: r;
+}
+
+.hidden {
+  display: none;
+}
